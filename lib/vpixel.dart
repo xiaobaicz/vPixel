@@ -48,8 +48,9 @@ class VPixel extends StatefulWidget {
     return _VPixelState();
   }
 
-  static void adaptive(BuildContext ctx) {
-    ctx.dependOnInheritedWidgetOfExactType<_VPixelInherited>();
+  //获取UI尺寸数据
+  static MediaQueryData of(BuildContext ctx) {
+    return ctx.dependOnInheritedWidgetOfExactType<_VPixelInherited>()?.data;
   }
 }
 
